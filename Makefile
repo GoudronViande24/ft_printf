@@ -6,7 +6,7 @@
 #    By: thfourni <thfourni@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 15:30:46 by thfourni          #+#    #+#              #
-#    Updated: 2023/05/18 15:38:38 by thfourni         ###   ########.fr        #
+#    Updated: 2023/05/18 17:46:37 by thfourni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ NAME				=	libftprintf.a
 CC					=	gcc
 CCFLAG			=	-Wall -Wextra -Werror
 
-SOURCES			=
+SOURCES			= ft_printf.c \
+							ft_get_args.c \
+							ft_put.c
 
 HEADERS			=	-I.
 OBJECTS			=	$(SOURCES:.c=.o)
@@ -36,12 +38,11 @@ $(LIBFT):
 clean:
 	make -C $(LIBFT_PATH) clean
 	rm -rf $(OBJECTS)
-	@echo "\033[0;91m* $(NAME) object files was deleted *\033[0m"
+	@echo "\033[0;91m* $(NAME) was deleted *\033[0m"
 
 fclean: clean
 	make -C $(LIBFT_PATH) fclean
 	rm -rf $(NAME)
-	@echo "\033[0;91m* $(NAME) was deleted* \033[0m"
 
 re: fclean all
 
